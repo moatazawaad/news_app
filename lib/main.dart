@@ -10,7 +10,6 @@ import 'package:flutter_udemy_news_app/shared/network/remote/dio_helper.dart';
 import 'package:flutter_udemy_news_app/shared/todo_app_cubit/todo_cubit.dart';
 import 'package:flutter_udemy_news_app/shared/todo_app_cubit/todo_states.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'layout/new_app_package/news_app.dart';
 
 void main() async {
@@ -23,10 +22,10 @@ void main() async {
 
   if (Platform.isWindows)
     await DesktopWindow.setMinWindowSize(
-      Size(600, 300),
+      const Size(600, 300),
     );
 
-  bool? isDark = CacheHelper.getBoolean(key: 'isDark');
+  // bool? isDark = CacheHelper.getBoolean(key: 'isDark');
 
   runApp(MyApp());
 }
@@ -62,11 +61,11 @@ class MyApp extends StatelessWidget {
               // primary color or primary swatch ht8er color f ae widget
               primarySwatch: Colors.green,
               scaffoldBackgroundColor: Colors.white,
-              floatingActionButtonTheme: FloatingActionButtonThemeData(
+              floatingActionButtonTheme: const FloatingActionButtonThemeData(
                 backgroundColor: Colors.green,
               ),
               //app bar theme التعديل فيه ينطبق ع ابلكيشن كله
-              appBarTheme: AppBarTheme(
+              appBarTheme: const AppBarTheme(
                 titleSpacing: 20.0,
                 backgroundColor: Colors.white,
                 elevation: 0.0,
@@ -83,15 +82,15 @@ class MyApp extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 type: BottomNavigationBarType.fixed,
                 selectedItemColor: Colors.green,
                 elevation: 10.0,
                 backgroundColor: Colors.white,
                 unselectedItemColor: Colors.grey,
               ),
-              textTheme: TextTheme(
-                bodyText1: TextStyle(
+              textTheme: const TextTheme(
+                bodyLarge: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
@@ -101,7 +100,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               // primary color or primary swatch ht8er color f ae widget
               primarySwatch: Colors.green,
-              floatingActionButtonTheme: FloatingActionButtonThemeData(
+              floatingActionButtonTheme: const FloatingActionButtonThemeData(
                 backgroundColor: Colors.green,
               ),
               //app bar theme التعديل فيه ينطبق ع ابلكيشن كله
@@ -113,12 +112,12 @@ class MyApp extends StatelessWidget {
                   statusBarColor: HexColor('333739'),
                   statusBarIconBrightness: Brightness.light,
                 ),
-                titleTextStyle: TextStyle(
+                titleTextStyle: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
                 ),
-                iconTheme: IconThemeData(
+                iconTheme: const IconThemeData(
                   color: Colors.white,
                 ),
               ),
@@ -130,8 +129,8 @@ class MyApp extends StatelessWidget {
                 unselectedItemColor: Colors.grey,
               ),
               scaffoldBackgroundColor: HexColor('333739'),
-              textTheme: TextTheme(
-                bodyText1: TextStyle(
+              textTheme: const TextTheme(
+                bodyLarge: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
@@ -151,7 +150,7 @@ class MyApp extends StatelessWidget {
             //     watch: 300,
             //   ),
             // ),
-            home: NewsLayout(),
+            home: const NewsLayout(),
           );
         },
       ),
